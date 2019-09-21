@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ipg-dC-pns">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
+        <!--Charts-->
         <scene sceneID="RCT-WG-11s">
             <objects>
                 <viewController id="V37-t3-t3F" sceneMemberID="viewController">
@@ -20,16 +20,18 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="lWM-Gc-0ot"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="ttf-zg-cvx"/>
+                    <tabBarItem key="tabBarItem" title="Charts" image="chart" id="ttf-zg-cvx">
+                        <inset key="imageInsets" minX="0.0" minY="-1" maxX="0.0" maxY="1"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c6p-rp-2uN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="15" y="582"/>
         </scene>
-        <!--Item 1-->
+        <!--Map-->
         <scene sceneID="0Gd-tL-ji9">
             <objects>
-                <viewController id="DGy-BT-Lt7" sceneMemberID="viewController">
+                <viewController id="DGy-BT-Lt7" customClass="MapViewController" customModule="Challange" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="z7S-Qm-3Q7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -37,21 +39,48 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="35Y-8p-gg2">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V4G-YV-7ZJ">
+                                <rect key="frame" x="305" y="548" width="50" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="ta7-uA-3b8"/>
+                                    <constraint firstAttribute="height" constant="50" id="uMi-ef-Dma"/>
+                                </constraints>
+                                <inset key="contentEdgeInsets" minX="4" minY="4" maxX="4" maxY="4"/>
+                                <state key="normal" image="share"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="tappedShowLocation:" destination="DGy-BT-Lt7" eventType="touchUpInside" id="HYP-MR-szu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="35Y-8p-gg2" firstAttribute="bottom" secondItem="PyB-El-Eb8" secondAttribute="bottom" id="Ddp-fX-1MN"/>
+                            <constraint firstItem="PyB-El-Eb8" firstAttribute="bottom" secondItem="V4G-YV-7ZJ" secondAttribute="bottom" constant="20" id="3hA-yH-mbM"/>
+                            <constraint firstAttribute="bottom" secondItem="35Y-8p-gg2" secondAttribute="bottom" constant="49" id="5xl-LG-Say"/>
+                            <constraint firstItem="PyB-El-Eb8" firstAttribute="trailing" secondItem="V4G-YV-7ZJ" secondAttribute="trailing" constant="20" id="KGj-Ra-XIy"/>
                             <constraint firstItem="35Y-8p-gg2" firstAttribute="trailing" secondItem="PyB-El-Eb8" secondAttribute="trailing" id="bdH-n3-Mv1"/>
                             <constraint firstItem="35Y-8p-gg2" firstAttribute="leading" secondItem="PyB-El-Eb8" secondAttribute="leading" id="pgg-Lf-tK6"/>
                             <constraint firstItem="35Y-8p-gg2" firstAttribute="top" secondItem="z7S-Qm-3Q7" secondAttribute="top" id="rqd-Gz-aDE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PyB-El-Eb8"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="ZXk-ZH-9TI"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="map" id="oac-nL-BxV">
+                        <inset key="imageInsets" minX="1" minY="1" maxX="-1" maxY="-1"/>
+                    </tabBarItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="mapView" destination="35Y-8p-gg2" id="rba-hc-MHI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ldJ-8W-Vil" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1255" y="582"/>
+            <point key="canvasLocation" x="-1255.2" y="580.65967016491754"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="N3I-3x-j0e">
@@ -72,4 +101,9 @@
             <point key="canvasLocation" x="-623" y="-188"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="chart" width="33" height="33"/>
+        <image name="map" width="33" height="33"/>
+        <image name="share" width="32" height="32"/>
+    </resources>
 </document>
