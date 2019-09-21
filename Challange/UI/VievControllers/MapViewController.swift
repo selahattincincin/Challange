@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MapViewController.swift
 //  Challange
 //
 //  Created by Selahattin Cincin on 21.09.2019.
@@ -7,14 +7,15 @@
 //
 
 import UIKit
+import MapKit
 
-class ViewController: UIViewController {
+
+class MapViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        
     }
-
-
+    
 }
-
