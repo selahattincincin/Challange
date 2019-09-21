@@ -55,13 +55,56 @@ class MapViewController: UIViewController {
             
         }
     }
+    private func sendLocation() {
+        guard let longitude: Double = locationManager.location?.coordinate.longitude,
+            let latitude: Double = locationManager.location?.coordinate.latitude else { return }
+        let location = Location(longitude: longitude, latitude: latitude)
+        locationService.sendLocation(location: location) {
+            print("bir şey oldu ama nee oldu daha anlamadık.")
+        }
+    }
+    
+    
+    func setupPressRecogniser() {
+        let longPressRecogniser = UILongPressGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
+        longPressRecogniser.minimumPressDuration = 0.5
+        mapView.addGestureRecognizer(longPressRecogniser)
+        
+        mapView.mapType = MKMapType.standard
+    }
+    @objc func handleTap(_ gestureReconizer: UILongPressGestureRecognizer) {
+        
+        let location = gestureReconizer.location(in: mapView)
+        let coordinate = mapView.convert(location,toCoordinateFrom: mapView)
+        
+        // Add annotation:
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = coordinate
+        annotation.title = "latitude:" + String(format: "%.02f",annotation.coordinate.latitude) + "& longitude:" + String(format: "%.02f",annotation.coordinate.longitude)
+        mapView.addAnnotation(annotation)
+        
+    }
+    
+    
+    var selectedAnnotation: MKPointAnnotation?
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        
+        let latValStr : String = String(format: "%.02f",Float((view.annotation?.coordinate.latitude)!))
+        let lonvalStr : String = String(format: "%.02f",Float((view.annotation?.coordinate.longitude)!))
+        
+        print("latitude: \(latValStr) & longitude: \(lonvalStr)")
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         checkLocationServices()
-        
+        setupPressRecogniser()
         
     }
+    
+    let locationService = LocationService()
     
     let locationManager = CLLocationManager()
     let regionInMeters:Double = 10000
@@ -71,10 +114,11 @@ class MapViewController: UIViewController {
     @IBAction func tappedShowLocation(_ sender: UIButton) {
         let alert = UIAlertController(title: "Konumum", message: "", preferredStyle: .alert)
         let actionCancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
-            print("action1")
+            print("Canceled")
         }
         let actionSend = UIAlertAction(title: "Send", style: .default) { (action) in
-            print("action2")
+            print("umarım gönderdi")
+            self.sendLocation()
         }
         alert.addAction(actionCancel)
         alert.addAction(actionSend)

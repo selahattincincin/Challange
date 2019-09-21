@@ -25,8 +25,8 @@
                                     <constraint firstAttribute="height" constant="300" id="kxZ-Cz-x0E"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kj8-Rq-Oeu" userLabel="Curvedline Chart" customClass="LineChart" customModule="Challange" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="360" width="375" height="258"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kj8-Rq-Oeu" userLabel="Curvedline Chart" customClass="LineChart" customModule="Challange" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="330" width="375" height="288"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
@@ -52,7 +52,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c6p-rp-2uN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="13.6" y="581.55922038980509"/>
+            <point key="canvasLocation" x="13.6" y="580.65967016491754"/>
         </scene>
         <!--Map-->
         <scene sceneID="0Gd-tL-ji9">

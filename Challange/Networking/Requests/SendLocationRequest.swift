@@ -15,7 +15,7 @@ class SendLocationRequest {
     
     init(location: Location) {
         self.location = location
-        guard let url = URL(string: "https://www.swiftbysundell.com/basics/codable/") else { return }
+        guard let url = URL(string: "") else { return }
         request = URLRequest(url: url)
         request?.httpMethod = "POST"
         request?.httpBody = location.transformToData()
