@@ -12,20 +12,9 @@ import CoreLocation
 
 
 class MapViewController: UIViewController {
+
     
-    let locationManager = CLLocationManager()
-    let regionInMeters:Double = 10000
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        checkLocationServices()
-
-        
-    }
-    func setupLocationManager() {
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-    }
+    
     
     func centerViewOnUserLocation() {
         if let location = locationManager.location?.coordinate {
@@ -33,14 +22,11 @@ class MapViewController: UIViewController {
             mapView.setRegion(region, animated: true)
         }
     }
-    func checkLocationServices() {
-        if CLLocationManager.locationServicesEnabled() {
-            setupLocationManager()
-            checkLocationAuthoriization()
-        }else {
-            
-        }
+    func setupLocationManager() {
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
     }
+    
     func checkLocationAuthoriization() {
         switch CLLocationManager.authorizationStatus() {
         case .authorizedWhenInUse:
@@ -60,6 +46,25 @@ class MapViewController: UIViewController {
             break
         }
     }
+    
+    func checkLocationServices() {
+        if CLLocationManager.locationServicesEnabled() {
+            setupLocationManager()
+            checkLocationAuthoriization()
+        }else {
+            
+        }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        checkLocationServices()
+        
+        
+    }
+    
+    let locationManager = CLLocationManager()
+    let regionInMeters:Double = 10000
     
     @IBOutlet weak var mapView: MKMapView!
 

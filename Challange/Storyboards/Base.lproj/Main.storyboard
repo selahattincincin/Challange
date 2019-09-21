@@ -13,20 +13,46 @@
         <!--Charts-->
         <scene sceneID="RCT-WG-11s">
             <objects>
-                <viewController id="V37-t3-t3F" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="rks-LA-kfS">
+                <viewController id="V37-t3-t3F" customClass="RandomChartsViewController" customModule="Challange" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MDo-L8-QuU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="lWM-Gc-0ot"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7y0-Mi-FNe" customClass="LineChart" customModule="Challange" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="30" width="375" height="300"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="kxZ-Cz-x0E"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kj8-Rq-Oeu" userLabel="Curvedline Chart" customClass="LineChart" customModule="Challange" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="360" width="375" height="258"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="7y0-Mi-FNe" firstAttribute="top" secondItem="g6L-DA-XGq" secondAttribute="top" constant="10" id="202-ZR-vpL"/>
+                            <constraint firstItem="kj8-Rq-Oeu" firstAttribute="top" secondItem="7y0-Mi-FNe" secondAttribute="bottom" id="6LF-hx-vyb"/>
+                            <constraint firstItem="g6L-DA-XGq" firstAttribute="bottom" secondItem="kj8-Rq-Oeu" secondAttribute="bottom" id="Dx1-m7-ED7"/>
+                            <constraint firstItem="7y0-Mi-FNe" firstAttribute="leading" secondItem="MDo-L8-QuU" secondAttribute="leading" id="Jfe-NH-yih"/>
+                            <constraint firstAttribute="trailing" secondItem="7y0-Mi-FNe" secondAttribute="trailing" id="PUx-sP-3SX"/>
+                            <constraint firstItem="kj8-Rq-Oeu" firstAttribute="leading" secondItem="MDo-L8-QuU" secondAttribute="leading" id="StG-yX-IIb"/>
+                            <constraint firstAttribute="trailing" secondItem="kj8-Rq-Oeu" secondAttribute="trailing" id="zxY-5O-tII"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="g6L-DA-XGq"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Charts" image="chart" id="ttf-zg-cvx">
                         <inset key="imageInsets" minX="0.0" minY="-1" maxX="0.0" maxY="1"/>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="curvedlineChart" destination="kj8-Rq-Oeu" id="eM5-Rh-cHc"/>
+                        <outlet property="lineChart" destination="7y0-Mi-FNe" id="Q4k-qn-TGd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c6p-rp-2uN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="15" y="582"/>
+            <point key="canvasLocation" x="13.6" y="581.55922038980509"/>
         </scene>
         <!--Map-->
         <scene sceneID="0Gd-tL-ji9">

@@ -15,6 +15,10 @@
 		89079DBD23363B87007B6257 /* SendLocationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89079DBC23363B87007B6257 /* SendLocationRequest.swift */; };
 		89079DBF23363B9D007B6257 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89079DBE23363B9D007B6257 /* LocationService.swift */; };
 		89079DC123363BAE007B6257 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89079DC023363BAE007B6257 /* Location.swift */; };
+		89079DC3233645CE007B6257 /* LineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89079DC2233645CE007B6257 /* LineChart.swift */; };
+		89079DC5233645EA007B6257 /* CurveAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89079DC4233645EA007B6257 /* CurveAlgorithm.swift */; };
+		89079DC723364601007B6257 /* DotCALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89079DC623364601007B6257 /* DotCALayer.swift */; };
+		89079DC92336475C007B6257 /* RandomChartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89079DC82336475C007B6257 /* RandomChartsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +32,10 @@
 		89079DBC23363B87007B6257 /* SendLocationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendLocationRequest.swift; sourceTree = "<group>"; };
 		89079DBE23363B9D007B6257 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		89079DC023363BAE007B6257 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		89079DC2233645CE007B6257 /* LineChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChart.swift; sourceTree = "<group>"; };
+		89079DC4233645EA007B6257 /* CurveAlgorithm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurveAlgorithm.swift; sourceTree = "<group>"; };
+		89079DC623364601007B6257 /* DotCALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotCALayer.swift; sourceTree = "<group>"; };
+		89079DC82336475C007B6257 /* RandomChartsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomChartsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +136,9 @@
 		89079DB223361AF1007B6257 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				89079DC4233645EA007B6257 /* CurveAlgorithm.swift */,
+				89079DC623364601007B6257 /* DotCALayer.swift */,
+				89079DC2233645CE007B6257 /* LineChart.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -150,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				89079DBA23361CCB007B6257 /* MapViewController.swift */,
+				89079DC82336475C007B6257 /* RandomChartsViewController.swift */,
 			);
 			path = VievControllers;
 			sourceTree = "<group>";
@@ -258,8 +270,12 @@
 			files = (
 				89079D9B23361A21007B6257 /* AppDelegate.swift in Sources */,
 				89079DBD23363B87007B6257 /* SendLocationRequest.swift in Sources */,
+				89079DC3233645CE007B6257 /* LineChart.swift in Sources */,
+				89079DC723364601007B6257 /* DotCALayer.swift in Sources */,
+				89079DC92336475C007B6257 /* RandomChartsViewController.swift in Sources */,
 				89079DC123363BAE007B6257 /* Location.swift in Sources */,
 				89079DBF23363B9D007B6257 /* LocationService.swift in Sources */,
+				89079DC5233645EA007B6257 /* CurveAlgorithm.swift in Sources */,
 				89079DBB23361CCB007B6257 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
