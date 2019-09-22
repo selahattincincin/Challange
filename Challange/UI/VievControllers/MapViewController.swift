@@ -32,7 +32,8 @@ class MapViewController: UIViewController {
     
     @IBAction func tappedShowLocation(_ sender: UIButton) {
         
-        locationManager.startUpdatingLocation()
+        centerViewOnUserLocation()
+        mapView.removeAnnotations(mapView.annotations)
         addPin(coordinate: locationManager.location!.coordinate)
         
     }

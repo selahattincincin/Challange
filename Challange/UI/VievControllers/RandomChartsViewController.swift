@@ -21,6 +21,9 @@ class RandomChartsViewController: UIViewController {
         // Sample dataset
         //        let dataEntries = [PointEntry(value: 0, title: ""), PointEntry(value: 100, title: ""), PointEntry(value: 100, title: ""), PointEntry(value: 100, title: ""), PointEntry(value: 20, title: ""), PointEntry(value: 30, title: ""), PointEntry(value: 120, title: "")]
         
+        
+    }
+    @IBAction func tappedRandomize(_ sender: Any) {
         let dataEntries = generateRandomEntries()
         
         lineChart.dataEntries = dataEntries

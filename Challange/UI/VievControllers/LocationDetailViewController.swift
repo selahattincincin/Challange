@@ -56,14 +56,14 @@ class LocationDetailViewController: UIViewController {
         
         
     }
-//    private func sendLocation() {
+    private func sendLocation() {
 //        guard let longitude: Double = locationManager.location?.coordinate.longitude,
 //            let latitude: Double = locationManager.location?.coordinate.latitude else { return }
 //        let location = Location(longitude: longitude, latitude: latitude)
 //        locationService.sendLocation(location: location) {
 //            print("bir şey oldu ama nee oldu daha anlamadık.")
 //        }
-//    }
+    }
     
 }
 
