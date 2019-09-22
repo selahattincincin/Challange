@@ -136,13 +136,47 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8bk-em-lvQ">
                                 <rect key="frame" x="20" y="519" width="335" height="128"/>
-                                <color key="backgroundColor" red="0.54031999139999998" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Konum Bilgisi" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ng-yI-p9y">
+                                        <rect key="frame" x="15" y="15" width="108" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VGu-q3-Qnr">
+                                        <rect key="frame" x="285" y="0.0" width="50" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="H3P-kz-D7Q"/>
+                                            <constraint firstAttribute="width" constant="50" id="RvT-zs-F24"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="XQh-PW-ueM"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="vlc-db-PeT"/>
+                                        </constraints>
+                                        <inset key="contentEdgeInsets" minX="4" minY="4" maxX="4" maxY="4"/>
+                                        <state key="normal" image="cancel"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="25"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="cancel_click:" destination="DUr-S0-aNA" eventType="touchUpInside" id="soE-qr-52c"/>
+                                            <action selector="tappedShowLocation:" destination="DGy-BT-Lt7" eventType="touchUpInside" id="Lkm-Jk-wq7"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="8bk-em-lvQ" secondAttribute="height" multiplier="335:128" id="9nw-dn-ldx"/>
+                                    <constraint firstAttribute="trailing" secondItem="VGu-q3-Qnr" secondAttribute="trailing" id="PcB-PE-9Dj"/>
+                                    <constraint firstItem="2ng-yI-p9y" firstAttribute="top" secondItem="8bk-em-lvQ" secondAttribute="top" constant="15" id="hpv-Wp-dzw"/>
+                                    <constraint firstItem="2ng-yI-p9y" firstAttribute="leading" secondItem="8bk-em-lvQ" secondAttribute="leading" constant="15" id="isd-FO-2Cw"/>
+                                    <constraint firstItem="VGu-q3-Qnr" firstAttribute="top" secondItem="8bk-em-lvQ" secondAttribute="top" id="xKs-YQ-dJ6"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.74818065068493156" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="yOA-8V-2Fh" firstAttribute="bottom" secondItem="8bk-em-lvQ" secondAttribute="bottom" constant="20" id="SKq-lY-2UN"/>
                             <constraint firstItem="yOA-8V-2Fh" firstAttribute="trailing" secondItem="8bk-em-lvQ" secondAttribute="trailing" constant="20" id="SLB-iq-LQe"/>
@@ -150,13 +184,17 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yOA-8V-2Fh"/>
                     </view>
+                    <connections>
+                        <outlet property="popView" destination="8bk-em-lvQ" id="p4i-cv-u5e"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Ne-Vz-UTN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1053" y="593"/>
+            <point key="canvasLocation" x="1052" y="592.35382308845578"/>
         </scene>
     </scenes>
     <resources>
+        <image name="cancel" width="37" height="37"/>
         <image name="chart" width="33" height="33"/>
         <image name="map" width="33" height="33"/>
         <image name="share" width="32" height="32"/>
