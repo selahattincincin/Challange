@@ -126,6 +126,35 @@
             </objects>
             <point key="canvasLocation" x="-623" y="-188"/>
         </scene>
+        <!--Location Detail View Controller-->
+        <scene sceneID="2av-VJ-hKy">
+            <objects>
+                <viewController storyboardIdentifier="LocationDetailViewController" id="DUr-S0-aNA" customClass="LocationDetailViewController" customModule="Challange" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Dge-HR-rZr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8bk-em-lvQ">
+                                <rect key="frame" x="20" y="519" width="335" height="128"/>
+                                <color key="backgroundColor" red="0.54031999139999998" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="8bk-em-lvQ" secondAttribute="height" multiplier="335:128" id="9nw-dn-ldx"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.74818065068493156" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="yOA-8V-2Fh" firstAttribute="bottom" secondItem="8bk-em-lvQ" secondAttribute="bottom" constant="20" id="SKq-lY-2UN"/>
+                            <constraint firstItem="yOA-8V-2Fh" firstAttribute="trailing" secondItem="8bk-em-lvQ" secondAttribute="trailing" constant="20" id="SLB-iq-LQe"/>
+                            <constraint firstItem="8bk-em-lvQ" firstAttribute="leading" secondItem="yOA-8V-2Fh" secondAttribute="leading" constant="20" id="kT6-pt-WNa"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="yOA-8V-2Fh"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Ne-Vz-UTN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1053" y="593"/>
+        </scene>
     </scenes>
     <resources>
         <image name="chart" width="33" height="33"/>

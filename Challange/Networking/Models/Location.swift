@@ -13,8 +13,8 @@ struct Location: Codable {
     let latitude: Double
     
     enum CodingKeys: String, CodingKey {
-        case longitude = "selahattin"
-        case latitude = "çinçin"
+        case longitude = "myLongitude"
+        case latitude = "myLatitude"
     }
     
     func transformToData() -> Data? {

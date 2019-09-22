@@ -19,6 +19,7 @@
 		89079DC5233645EA007B6257 /* CurveAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89079DC4233645EA007B6257 /* CurveAlgorithm.swift */; };
 		89079DC723364601007B6257 /* DotCALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89079DC623364601007B6257 /* DotCALayer.swift */; };
 		89079DC92336475C007B6257 /* RandomChartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89079DC82336475C007B6257 /* RandomChartsViewController.swift */; };
+		896CC49F2337915800CA5FDF /* LocationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896CC49E2337915800CA5FDF /* LocationDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		89079DC4233645EA007B6257 /* CurveAlgorithm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurveAlgorithm.swift; sourceTree = "<group>"; };
 		89079DC623364601007B6257 /* DotCALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotCALayer.swift; sourceTree = "<group>"; };
 		89079DC82336475C007B6257 /* RandomChartsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomChartsViewController.swift; sourceTree = "<group>"; };
+		896CC49E2337915800CA5FDF /* LocationDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 			children = (
 				89079DBA23361CCB007B6257 /* MapViewController.swift */,
 				89079DC82336475C007B6257 /* RandomChartsViewController.swift */,
+				896CC49E2337915800CA5FDF /* LocationDetailViewController.swift */,
 			);
 			path = VievControllers;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				89079DBD23363B87007B6257 /* SendLocationRequest.swift in Sources */,
 				89079DC3233645CE007B6257 /* LineChart.swift in Sources */,
 				89079DC723364601007B6257 /* DotCALayer.swift in Sources */,
+				896CC49F2337915800CA5FDF /* LocationDetailViewController.swift in Sources */,
 				89079DC92336475C007B6257 /* RandomChartsViewController.swift in Sources */,
 				89079DC123363BAE007B6257 /* Location.swift in Sources */,
 				89079DBF23363B9D007B6257 /* LocationService.swift in Sources */,
