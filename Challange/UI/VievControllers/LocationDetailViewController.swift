@@ -36,19 +36,19 @@ class LocationDetailViewController: UIViewController {
         buttonShare.layer.shadowOffset = .zero
         buttonShare.layer.shadowOpacity = 0.2
         
-        latituteInfo.text = "Latitude:\(location!.latitude)"
-        longituteInfo.text = "Longitude:\(location!.longitude)"
+        latituteInfo.text = "Latitude:\(String(describing: location?.latitude))"
+        longituteInfo.text = "Longitude:\(String(describing: location?.longitude))"
         
         
     }
     @IBAction func tappedShare(_ sender: Any) {
-        let alert = UIAlertController(title: "Konumum", message: "\(String(describing: location!.latitude)) \(String(describing: location!.longitude))", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Uyarı", message: "Konumunuzu paylaşmak üzeresiniz!", preferredStyle: .alert)
         let actionCancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
             print("Canceled")
         }
         let actionSend = UIAlertAction(title: "Send", style: .default) { (action) in
             print("umarım gönderdi")
-//            self.sendLocation()
+            self.sendLocation()
         }
         alert.addAction(actionCancel)
         alert.addAction(actionSend)
@@ -57,12 +57,12 @@ class LocationDetailViewController: UIViewController {
         
     }
     private func sendLocation() {
-//        guard let longitude: Double = locationManager.location?.coordinate.longitude,
-//            let latitude: Double = locationManager.location?.coordinate.latitude else { return }
-//        let location = Location(longitude: longitude, latitude: latitude)
-//        locationService.sendLocation(location: location) {
-//            print("bir şey oldu ama nee oldu daha anlamadık.")
-//        }
+        guard let longitude: Double = location?.longitude,
+            let latitude: Double = location?.latitude else { return }
+        let mlocation = Location(longitude: longitude, latitude: latitude)
+        locationService.sendLocation(location: mlocation) {
+            print("bir şey oldu ama nee oldu daha anlamadık.")
+        }
     }
     
 }

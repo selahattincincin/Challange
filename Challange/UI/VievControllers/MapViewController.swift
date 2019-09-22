@@ -19,6 +19,7 @@ class MapViewController: UIViewController {
     
     
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var locationButton: UIButton!
     
     
     
@@ -26,6 +27,11 @@ class MapViewController: UIViewController {
         super.viewDidLoad()
         checkLocationServices()
         setupPressRecogniser()
+        
+        locationButton.layer.cornerRadius = 5
+        locationButton.layer.shadowRadius = 2
+        locationButton.layer.shadowOffset = .zero
+        locationButton.layer.shadowOpacity = 0.2
         
     }
     
@@ -35,7 +41,7 @@ class MapViewController: UIViewController {
         centerViewOnUserLocation()
         mapView.removeAnnotations(mapView.annotations)
         addPin(coordinate: locationManager.location!.coordinate)
-        
+        opendDetailViewController()
     }
     
     
@@ -64,7 +70,6 @@ class MapViewController: UIViewController {
         case .authorizedWhenInUse, .authorizedAlways:
             mapView.delegate = self
             centerViewOnUserLocation()
-//            locationManager.startUpdatingLocation()
             break
         case .notDetermined:
             locationManager.requestWhenInUseAuthorization()
@@ -91,12 +96,12 @@ class MapViewController: UIViewController {
         }
         mapView.removeAnnotations(mapView.annotations)
         addPin(coordinate: coordinate)
-        
+        opendDetailViewController()
         
     }
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        opendDetailViewController()
+        
         
     }
     

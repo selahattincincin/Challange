@@ -12,15 +12,17 @@ class RandomChartsViewController: UIViewController {
     
     @IBOutlet weak var lineChart: LineChart!
     @IBOutlet weak var curvedlineChart: LineChart!
+    @IBOutlet weak var randomizeButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.backgroundColor = #colorLiteral(red: 0, green: 0.3529411765, blue: 0.6156862745, alpha: 1)
         
-        // Sample dataset
-        //        let dataEntries = [PointEntry(value: 0, title: ""), PointEntry(value: 100, title: ""), PointEntry(value: 100, title: ""), PointEntry(value: 100, title: ""), PointEntry(value: 20, title: ""), PointEntry(value: 30, title: ""), PointEntry(value: 120, title: "")]
-        
+        randomizeButton.layer.cornerRadius = 5
+        randomizeButton.layer.shadowRadius = 2
+        randomizeButton.layer.shadowOffset = .zero
+        randomizeButton.layer.shadowOpacity = 0.2
         
     }
     @IBAction func tappedRandomize(_ sender: Any) {
@@ -48,8 +50,4 @@ class RandomChartsViewController: UIViewController {
         return result
     }
 }
-    extension Date {
-        var dayAsNumber: Int {
-            return 21
-        }
-}
+   

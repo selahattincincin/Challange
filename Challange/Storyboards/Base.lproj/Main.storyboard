@@ -65,6 +65,7 @@
                     <connections>
                         <outlet property="curvedlineChart" destination="kj8-Rq-Oeu" id="eM5-Rh-cHc"/>
                         <outlet property="lineChart" destination="7y0-Mi-FNe" id="Q4k-qn-TGd"/>
+                        <outlet property="randomizeButton" destination="6AK-Ot-cAc" id="yNd-cP-6eD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c6p-rp-2uN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -118,6 +119,7 @@
                     </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="locationButton" destination="V4G-YV-7ZJ" id="dDU-tB-Kle"/>
                         <outlet property="mapView" destination="35Y-8p-gg2" id="rba-hc-MHI"/>
                     </connections>
                 </viewController>
@@ -255,8 +257,8 @@
     </scenes>
     <resources>
         <image name="cancel" width="37" height="37"/>
-        <image name="chart" width="33" height="33"/>
+        <image name="chart" width="25" height="22"/>
         <image name="ic_locate" width="52" height="52"/>
-        <image name="map" width="33" height="33"/>
+        <image name="map" width="24" height="21"/>
     </resources>
 </document>
