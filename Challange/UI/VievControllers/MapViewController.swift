@@ -34,7 +34,7 @@ class MapViewController: UIViewController {
     
     
     @IBAction func tappedShowLocation(_ sender: UIButton) {
-        let alert = UIAlertController(title: "Konumum", message: "", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Konumum", message: "\(String(describing: locationManager.location!.coordinate.latitude)) \(String(describing: locationManager.location!.coordinate.longitude))", preferredStyle: .alert)
         let actionCancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
             print("Canceled")
         }
@@ -107,6 +107,7 @@ class MapViewController: UIViewController {
         mapView.removeAnnotations(mapView.annotations)
         addPin(coordinate: coordinate)
         opendDetailViewController()
+        
     }
     
     
@@ -143,7 +144,7 @@ extension MapViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         let annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "userLocation")
         annotationView.image = UIImage(named: "ic_map_pin")
-        annotationView.frame.size =  CGSize(width: 21, height: 27)
+        annotationView.frame.size =  CGSize(width: 63, height: 81)
         return annotationView
     }
 }
@@ -154,8 +155,10 @@ extension MapViewController {
         if let detailViewController = storyboard?.instantiateViewController(withIdentifier: "LocationDetailViewController") as? LocationDetailViewController {
             detailViewController.modalPresentationStyle = .overCurrentContext
             detailViewController.modalTransitionStyle = .crossDissolve
+            detailViewController.location = locationManager.location?.coordinate
             self.present(detailViewController
                 , animated: true, completion: nil)
+            
         }
     }
     

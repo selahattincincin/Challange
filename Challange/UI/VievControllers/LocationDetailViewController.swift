@@ -7,9 +7,15 @@
 //
 
 import UIKit
+import MapKit
 
 class LocationDetailViewController: UIViewController {
     @IBOutlet weak var popView: UIView!
+    @IBOutlet weak var latituteInfo: UILabel!
+    @IBOutlet weak var longituteInfo: UILabel!
+    
+    
+    var location: CLLocationCoordinate2D?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,12 +25,16 @@ class LocationDetailViewController: UIViewController {
         view.addGestureRecognizer(tap)
         view.isUserInteractionEnabled = true
         
-        popView.layer.cornerRadius = 12
+        popView.layer.cornerRadius = 10
         popView.layer.shadowRadius = 22
         popView.layer.shadowOffset = .zero
         popView.layer.shadowOpacity = 0.6
         
-
+        
+        latituteInfo.text = "Latitude:\(location!.latitude)"
+        longituteInfo.text = "Longitude:\(location!.longitude)"
+        
+        
     }
 
 }

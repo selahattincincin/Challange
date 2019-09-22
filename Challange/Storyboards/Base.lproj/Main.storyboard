@@ -137,12 +137,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8bk-em-lvQ">
                                 <rect key="frame" x="20" y="519" width="335" height="128"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Konum Bilgisi" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ng-yI-p9y">
-                                        <rect key="frame" x="15" y="15" width="108" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VGu-q3-Qnr">
                                         <rect key="frame" x="285" y="0.0" width="50" height="50"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -165,13 +159,37 @@
                                             <action selector="tappedShowLocation:" destination="DGy-BT-Lt7" eventType="touchUpInside" id="Lkm-Jk-wq7"/>
                                         </connections>
                                     </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="b68-9o-YHq">
+                                        <rect key="frame" x="10" y="10" width="325" height="141.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Konum Bilgisi" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ng-yI-p9y">
+                                                <rect key="frame" x="0.0" y="0.0" width="108" height="21.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6bz-tU-edB" userLabel="Latitude">
+                                                <rect key="frame" x="0.0" y="31.5" width="50" height="50"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A0v-3z-pp6" userLabel="Longitude">
+                                                <rect key="frame" x="0.0" y="91.5" width="50" height="50"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="b68-9o-YHq" firstAttribute="top" secondItem="8bk-em-lvQ" secondAttribute="top" constant="10" id="88G-q6-y0Y"/>
                                     <constraint firstAttribute="width" secondItem="8bk-em-lvQ" secondAttribute="height" multiplier="335:128" id="9nw-dn-ldx"/>
                                     <constraint firstAttribute="trailing" secondItem="VGu-q3-Qnr" secondAttribute="trailing" id="PcB-PE-9Dj"/>
-                                    <constraint firstItem="2ng-yI-p9y" firstAttribute="top" secondItem="8bk-em-lvQ" secondAttribute="top" constant="15" id="hpv-Wp-dzw"/>
-                                    <constraint firstItem="2ng-yI-p9y" firstAttribute="leading" secondItem="8bk-em-lvQ" secondAttribute="leading" constant="15" id="isd-FO-2Cw"/>
+                                    <constraint firstItem="b68-9o-YHq" firstAttribute="trailing" secondItem="VGu-q3-Qnr" secondAttribute="trailing" id="d70-Bc-Ula"/>
+                                    <constraint firstItem="b68-9o-YHq" firstAttribute="leading" secondItem="8bk-em-lvQ" secondAttribute="leading" constant="10" id="qpe-aD-yeR"/>
                                     <constraint firstItem="VGu-q3-Qnr" firstAttribute="top" secondItem="8bk-em-lvQ" secondAttribute="top" id="xKs-YQ-dJ6"/>
                                 </constraints>
                             </view>
@@ -185,6 +203,8 @@
                         <viewLayoutGuide key="safeArea" id="yOA-8V-2Fh"/>
                     </view>
                     <connections>
+                        <outlet property="latituteInfo" destination="6bz-tU-edB" id="oP8-XR-ZYr"/>
+                        <outlet property="longituteInfo" destination="A0v-3z-pp6" id="mDn-ga-OaX"/>
                         <outlet property="popView" destination="8bk-em-lvQ" id="p4i-cv-u5e"/>
                     </connections>
                 </viewController>
