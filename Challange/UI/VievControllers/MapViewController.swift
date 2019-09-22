@@ -13,9 +13,6 @@ import CoreLocation
 
 class MapViewController: UIViewController {
     
-    
-    let locationService = LocationService()
-    
     let locationManager = CLLocationManager()
     let regionInMeters:Double = 10000
     var selectedAnnotation: MKPointAnnotation?
@@ -34,17 +31,10 @@ class MapViewController: UIViewController {
     
     
     @IBAction func tappedShowLocation(_ sender: UIButton) {
-        let alert = UIAlertController(title: "Konumum", message: "\(String(describing: locationManager.location!.coordinate.latitude)) \(String(describing: locationManager.location!.coordinate.longitude))", preferredStyle: .alert)
-        let actionCancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
-            print("Canceled")
-        }
-        let actionSend = UIAlertAction(title: "Send", style: .default) { (action) in
-            print("umarım gönderdi")
-            self.sendLocation()
-        }
-        alert.addAction(actionCancel)
-        alert.addAction(actionSend)
-        present(alert, animated: true, completion: nil)
+        
+        locationManager.startUpdatingLocation()
+        addPin(coordinate: locationManager.location!.coordinate)
+        
     }
     
     
@@ -73,7 +63,7 @@ class MapViewController: UIViewController {
         case .authorizedWhenInUse, .authorizedAlways:
             mapView.delegate = self
             centerViewOnUserLocation()
-            locationManager.startUpdatingLocation()
+//            locationManager.startUpdatingLocation()
             break
         case .notDetermined:
             locationManager.requestWhenInUseAuthorization()
@@ -81,17 +71,6 @@ class MapViewController: UIViewController {
             reAskLocationPermission()
         }
     }
-    
-    
-    private func sendLocation() {
-        guard let longitude: Double = locationManager.location?.coordinate.longitude,
-            let latitude: Double = locationManager.location?.coordinate.latitude else { return }
-        let location = Location(longitude: longitude, latitude: latitude)
-        locationService.sendLocation(location: location) {
-            print("bir şey oldu ama nee oldu daha anlamadık.")
-        }
-    }
-    
     
     func setupPressRecogniser() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
@@ -104,22 +83,19 @@ class MapViewController: UIViewController {
     @objc func handleTap(_ gestureReconizer: UITapGestureRecognizer) {
         let location = gestureReconizer.location(in: mapView)
         let coordinate = mapView.convert(location,toCoordinateFrom: mapView)
+        if let addedPin = mapView.annotations.first {
+            if addedPin.coordinate.latitude == coordinate.latitude && addedPin.coordinate.longitude == coordinate.longitude {
+                return
+            }
+        }
         mapView.removeAnnotations(mapView.annotations)
         addPin(coordinate: coordinate)
-        opendDetailViewController()
+        
         
     }
     
-    
-    
-    
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        
-        let latValStr : String = String(format: "%.02f",Float((view.annotation?.coordinate.latitude)!))
-        let lonvalStr : String = String(format: "%.02f",Float((view.annotation?.coordinate.longitude)!))
-        
-        print("latitude: \(latValStr) & longitude: \(lonvalStr)")
-        
+        opendDetailViewController()
         
     }
     
@@ -144,7 +120,7 @@ extension MapViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         let annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "userLocation")
         annotationView.image = UIImage(named: "ic_map_pin")
-        annotationView.frame.size =  CGSize(width: 63, height: 81)
+        annotationView.frame.size =  CGSize(width: 28, height: 36)
         return annotationView
     }
 }
@@ -156,6 +132,7 @@ extension MapViewController {
             detailViewController.modalPresentationStyle = .overCurrentContext
             detailViewController.modalTransitionStyle = .crossDissolve
             detailViewController.location = locationManager.location?.coordinate
+
             self.present(detailViewController
                 , animated: true, completion: nil)
             
