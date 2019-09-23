@@ -47,7 +47,7 @@ class LocationDetailViewController: UIViewController {
     }
     @IBAction func tappedShare(_ sender: Any) {
         let alert = UIAlertController(title: "Uyarı", message: "Konumunuzu paylaşmak üzeresiniz!", preferredStyle: .alert)
-        let actionCancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+        let actionCancel = UIAlertAction(title: "Vazgeç", style: .cancel) { (action) in
             print("Canceled")
         }
         let actionSend = UIAlertAction(title: "Gönder", style: .default) { (action) in
