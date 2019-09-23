@@ -36,10 +36,10 @@ class LocationDetailViewController: UIViewController {
         buttonShare.layer.shadowOffset = .zero
         buttonShare.layer.shadowOpacity = 0.2
         if let latitute = location?.latitude {
-            latituteInfo.text = "Latitude:\(String(describing: latitute))"
+            latituteInfo.text = "Enlem:\(String(describing: latitute))"
         }
         if let longitute = location?.longitude {
-            longituteInfo.text = "Longitude:\(String(describing: longitute))"
+            longituteInfo.text = "Boylam:\(String(describing: longitute))"
         }
       
         
@@ -50,7 +50,7 @@ class LocationDetailViewController: UIViewController {
         let actionCancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
             print("Canceled")
         }
-        let actionSend = UIAlertAction(title: "Send", style: .default) { (action) in
+        let actionSend = UIAlertAction(title: "Gönder", style: .default) { (action) in
             self.sendLocation()
         }
         alert.addAction(actionCancel)

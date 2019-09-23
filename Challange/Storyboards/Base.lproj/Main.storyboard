@@ -37,7 +37,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="7WL-rB-R0W"/>
                                 </constraints>
-                                <state key="normal" title="Randomize">
+                                <state key="normal" title="Karıştır">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="titleShadowColor" red="0.36470588240000001" green="0.36862745099999999" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -211,7 +211,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="GUd-n6-2Gq"/>
                                         </constraints>
-                                        <state key="normal" title="Share">
+                                        <state key="normal" title="Paylaş">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="titleShadowColor" red="0.36470588240000001" green="0.36862745099999999" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
