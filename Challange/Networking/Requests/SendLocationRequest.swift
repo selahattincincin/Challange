@@ -15,12 +15,10 @@ class SendLocationRequest {
     
     init(location: Location) {
         self.location = location
-        guard let url = URL(string: "") else { return }
+        guard let url = URL(string: "http://tarimsalfaaliyetler.com/json/reply/savelocationrequest?latitute=\(location.latitude)&longitude=\(location.longitude)") else { return }
         request = URLRequest(url: url)
-        request?.httpMethod = "POST"
-        request?.httpBody = location.transformToData()
+        request?.httpMethod = "GET"
         
-        request?.addValue("", forHTTPHeaderField: "")
-        request?.addValue("", forHTTPHeaderField: "")
+    
     }
 }

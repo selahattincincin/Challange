@@ -41,7 +41,7 @@ class MapViewController: UIViewController {
         centerViewOnUserLocation()
         mapView.removeAnnotations(mapView.annotations)
         addPin(coordinate: locationManager.location!.coordinate)
-        opendDetailViewController()
+        opendDetailViewController(coordinate: locationManager.location!.coordinate)
     }
     
     
@@ -96,7 +96,7 @@ class MapViewController: UIViewController {
         }
         mapView.removeAnnotations(mapView.annotations)
         addPin(coordinate: coordinate)
-        opendDetailViewController()
+        opendDetailViewController(coordinate: coordinate)
         
     }
     
@@ -133,11 +133,11 @@ extension MapViewController: MKMapViewDelegate {
 
 
 extension MapViewController {
-    fileprivate func opendDetailViewController() {
+    fileprivate func opendDetailViewController(coordinate: CLLocationCoordinate2D) {
         if let detailViewController = storyboard?.instantiateViewController(withIdentifier: "LocationDetailViewController") as? LocationDetailViewController {
             detailViewController.modalPresentationStyle = .overCurrentContext
             detailViewController.modalTransitionStyle = .crossDissolve
-            detailViewController.location = locationManager.location?.coordinate
+            detailViewController.location = coordinate
 
             self.present(detailViewController
                 , animated: true, completion: nil)

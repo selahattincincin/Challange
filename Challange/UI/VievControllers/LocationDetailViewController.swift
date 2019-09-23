@@ -35,9 +35,13 @@ class LocationDetailViewController: UIViewController {
         buttonShare.layer.shadowRadius = 2
         buttonShare.layer.shadowOffset = .zero
         buttonShare.layer.shadowOpacity = 0.2
-        
-        latituteInfo.text = "Latitude:\(String(describing: location?.latitude))"
-        longituteInfo.text = "Longitude:\(String(describing: location?.longitude))"
+        if let latitute = location?.latitude {
+            latituteInfo.text = "Latitude:\(String(describing: latitute))"
+        }
+        if let longitute = location?.longitude {
+            longituteInfo.text = "Longitude:\(String(describing: longitute))"
+        }
+      
         
         
     }
@@ -47,7 +51,6 @@ class LocationDetailViewController: UIViewController {
             print("Canceled")
         }
         let actionSend = UIAlertAction(title: "Send", style: .default) { (action) in
-            print("umarım gönderdi")
             self.sendLocation()
         }
         alert.addAction(actionCancel)
@@ -60,16 +63,29 @@ class LocationDetailViewController: UIViewController {
         guard let longitude: Double = location?.longitude,
             let latitude: Double = location?.latitude else { return }
         let mlocation = Location(longitude: longitude, latitude: latitude)
-        locationService.sendLocation(location: mlocation) {
-            print("bir şey oldu ama nee oldu daha anlamadık.")
+        locationService.sendLocation(location: mlocation) {[weak self] response in
+            guard let strongSelf = self else { return }
+            if let response = response, let status = response.success, status {
+                strongSelf.showMessage("Konumunuz başarı ile gönderildi.")
+            } else {
+                strongSelf.showMessage("Konumunuz gönderilirken bir hata oluştu.")
+            }
+            
         }
     }
     
 }
 
+
 extension LocationDetailViewController {
     @IBAction func cancelClick(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+    func showMessage(_ message: String) {
+        let alert = UIAlertController(title: "", message: message , preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Tamam", style: .cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
+        
     }
 }
     

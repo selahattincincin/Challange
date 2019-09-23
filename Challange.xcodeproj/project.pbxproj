@@ -20,6 +20,7 @@
 		89079DC723364601007B6257 /* DotCALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89079DC623364601007B6257 /* DotCALayer.swift */; };
 		89079DC92336475C007B6257 /* RandomChartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89079DC82336475C007B6257 /* RandomChartsViewController.swift */; };
 		896CC49F2337915800CA5FDF /* LocationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896CC49E2337915800CA5FDF /* LocationDetailViewController.swift */; };
+		89C9D8A12338CC48008484FF /* SendLocationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C9D8A02338CC48008484FF /* SendLocationResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		89079DC623364601007B6257 /* DotCALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotCALayer.swift; sourceTree = "<group>"; };
 		89079DC82336475C007B6257 /* RandomChartsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomChartsViewController.swift; sourceTree = "<group>"; };
 		896CC49E2337915800CA5FDF /* LocationDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailViewController.swift; sourceTree = "<group>"; };
+		89C9D8A02338CC48008484FF /* SendLocationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendLocationResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 		89079DB023361A9E007B6257 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				89C9D89F2338CC04008484FF /* Responces */,
 				89079DB923361B4A007B6257 /* Models */,
 				89079DB823361B47007B6257 /* Requests */,
 				89079DB723361B43007B6257 /* Services */,
@@ -200,6 +203,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		89C9D89F2338CC04008484FF /* Responces */ = {
+			isa = PBXGroup;
+			children = (
+				89C9D8A02338CC48008484FF /* SendLocationResponse.swift */,
+			);
+			path = Responces;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -273,6 +284,7 @@
 			files = (
 				89079D9B23361A21007B6257 /* AppDelegate.swift in Sources */,
 				89079DBD23363B87007B6257 /* SendLocationRequest.swift in Sources */,
+				89C9D8A12338CC48008484FF /* SendLocationResponse.swift in Sources */,
 				89079DC3233645CE007B6257 /* LineChart.swift in Sources */,
 				89079DC723364601007B6257 /* DotCALayer.swift in Sources */,
 				896CC49F2337915800CA5FDF /* LocationDetailViewController.swift in Sources */,
